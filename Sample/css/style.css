@@ -1,0 +1,385 @@
+@charset "utf-8";
+
+/* ------------------------------------------------------------- */
+/* Template#047 Designed by 日影石 https://hikageishi.websozai.jp */
+/* ------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #b4a190 url(../img/bg.png) no-repeat top;
+    text-align: center;
+    line-height: 2;
+    font-size: 15px;
+    font-family: 'Aldrich', sans-serif;
+    color: #200a07;
+    box-sizing: border-box;
+}
+
+/* サイトタイトル */
+.title {
+    background-color: #584842;
+    margin: 0 auto;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    padding-top: 30px;
+    text-shadow: 1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+.subtitle { 
+    padding-top: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+/* リンクタグ */
+a {
+    color: #244765;
+}
+
+a:hover {
+    color: #84762f;
+    transition: all  0.3s ease;
+}
+
+/* 画像 */
+img {
+    max-width: 100%; 
+    height:auto;
+}
+
+/* 段落 */
+p {
+    margin-bottom: 15px;
+}
+
+/* ヘッダー */
+header {
+    background: url("../img/header.jpg") center center no-repeat;
+    height: 200px;
+    text-align: center;
+    width: 100%;
+}
+
+/* 全体 */
+.wrapper {
+    display: table;
+    width: 1000px;
+    text-align: left;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* メニュー */
+nav.menu ul{
+    line-height: 2.8;
+    list-style: none;
+    width: 1000px;
+    margin: auto;
+    display: flex;
+}
+
+nav.menu ul li{
+    width: 300px;
+}
+
+nav.menu li {
+    background-color: #584842;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+
+nav.menu li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    margin-top: -60px;
+    text-shadow: 1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
+}
+
+nav.menu li a:hover {
+    color: #84762f;
+}
+
+nav.menu li.active {
+    background-color: #d7d7d9;/* アクティブなメニューの色 */
+}
+
+nav.menu li:hover {
+    position: relative;
+    background-color: #d7d7d9;
+    transition: all  0.3s ease;
+}
+
+nav.menu li::before {
+    content: url(../img/menu.png);  
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+/* メニューの歯車のアニメーション */
+nav.menu li:hover::before {
+    animation: gia1 1s linear infinite;
+}
+@keyframes gia1 {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* メインボックス */
+main {
+    background-color: #d7d7d9;
+    padding: 10px;
+    position: relative;
+    flex: 1;
+}
+
+/* サイドボックス */
+aside {
+    background-color: #d7d7d9;
+    padding: 10px;
+    position: relative;
+    width: 250px;
+}
+
+/* センター */
+.center {
+    text-align: center;
+}
+
+/* 見出し */
+h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    background : #74747c url(../img/h2.png);  
+    text-shadow: 1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
+}
+
+h2::after {
+    border-top: 10px solid #74747c;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    bottom: -10px;
+    left : 50%;
+    content: "";
+    position: absolute;
+}
+
+h3 {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 60px;
+    text-shadow: 1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
+    background: linear-gradient(transparent 60%, #74747c 60%);
+}
+
+h3::before {
+    position: absolute;
+    left: 0;
+    content: url("../img/h3.png");
+    width: 50px;
+    height: 50px;
+    animation: gia2 1s;/* 見出し3の歯車のアニメーション */
+}
+/* 見出し3の歯車のアニメーション */
+@keyframes gia2 {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 更新履歴 */
+.info {
+    margin: 10px;
+    padding: 5px;
+    height: 105px;
+    overflow: auto;
+    background-color: #74747c;
+    color: #fff;
+}
+
+/* 装飾ボックス */
+.box {
+    background-color: #74747c;
+    padding: 10px;
+    width: auto;
+    color: #fff;
+}
+
+/* 強調 */
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+strong {
+    background: linear-gradient( transparent 60%,#9e1225 60% );
+    font-weight: bold;
+}
+
+/* 引用 */
+blockquote {
+    background-color: #74747c;
+    margin: 10px 0;
+    padding: 20px;
+    position: relative;
+    width: auto;
+    color: #fff;
+}
+
+blockquote:before {
+    content: "“";
+    font-size: 40px;
+    color: #584842;
+    position: absolute;
+    left: 0;
+    top: -20px;
+}
+
+/* リスト */
+ol{  
+    margin-left: 26px;
+}
+
+ul {
+    margin-left: 26px;
+    list-style-image: url(../img/mark.png);
+}
+
+/* メールフォーム */
+textarea {
+    border: 0;
+    color: #fff;
+    background-color: #74747c;
+    width: 100%;
+    max-width: 750px;
+    height: 100px;
+}
+
+input,
+button {
+    border: 0;
+    margin: 10px 0;
+    color: #fff;
+    background-color: #74747c;
+    height: 25px;
+}
+
+button {
+    width: 100px;
+    background-color: #74747c;
+}
+
+button:active {
+    background-color: #84762f;
+}
+
+/* リンク集  */
+.banner {
+    border: 0;
+    float: left;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+/* フッター */
+footer {
+    margin: 0 auto;
+    clear: both;
+    background-color: #584842;
+    text-align: center;
+    width: 1000px;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer ul li {
+    display: inline;
+    list-style: outside none none;
+}
+
+footer ul li::before {
+    content: "|";
+    padding: 0 0.6em;
+    color: #fff;
+}
+
+footer ul li:first-child::before{
+    content: "";
+    padding: 0;
+}
+
+.copyright {
+    margin: 0 auto;
+    color: #fff;
+}
+
+.designed,
+.designed a {
+    text-decoration: none;
+    color: #b4a190;
+    font-size: 11px;
+}
+
+/* メディアクエリ */
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        background-color: #d7d7d9;
+        width: auto;
+        padding: 10px;
+    }
+    main,
+    aside {
+        display: block;
+    }
+    nav.menu ul,
+    textarea,
+    footer {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    aside {
+        order: 1;/* サイドバーが1番目に来るようにする */
+    }
+    main {
+        order: 2;/* メインが二番目に来るようにする */
+    }
+    main,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+}
