@@ -8,6 +8,7 @@
   <meta property="og:title" content="2ny – Game Development">
   <meta property="og:description" content="Unityを中心としたゲーム開発の副業案件窓口です。副業としての業務委託のみ対応しています。">
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfqUtgrAAAAAJ6vVw_nmwEceHMFJKkcfB_KWjf6"></script>
 </head>
 <body>
   <header class="site-header">
@@ -73,6 +74,7 @@
             <label for="website">ウェブサイト</label>
             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
           </div>
+          <input type="hidden" name="g-recaptcha-response" id="recaptcha-token">
           <button type="submit" class="submit-button">送信する</button>
           <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
@@ -88,9 +90,25 @@
 
   <script>
     (function () {
+      const siteKey = '6LfqUtgrAAAAAJ6vVw_nmwEceHMFJKkcfB_KWjf6';
       const form = document.getElementById('contact-form');
       const status = document.getElementById('form-status');
+      const tokenInput = document.getElementById('recaptcha-token');
       if (!form) return;
+
+      const getRecaptchaToken = () => {
+        if (typeof grecaptcha === 'undefined') {
+          return Promise.reject(new Error('reCAPTCHA unavailable'));
+        }
+
+        return new Promise((resolve, reject) => {
+          grecaptcha.ready(() => {
+            grecaptcha.execute(siteKey, { action: 'contact' })
+              .then(resolve)
+              .catch(reject);
+          });
+        });
+      };
 
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -101,6 +119,22 @@
         if (honeypot && honeypot.value.trim() !== '') {
           status.textContent = '送信ありがとうございました。';
           form.reset();
+          if (tokenInput) {
+            tokenInput.value = '';
+          }
+          return;
+        }
+
+        try {
+          const token = await getRecaptchaToken();
+          if (tokenInput) {
+            tokenInput.value = token;
+          }
+        } catch (error) {
+          status.textContent = 'エラーが発生しました。ネットワークを確認してください。';
+          if (tokenInput) {
+            tokenInput.value = '';
+          }
           return;
         }
 
@@ -118,11 +152,17 @@
           if (response.ok) {
             status.textContent = '送信ありがとうございました。';
             form.reset();
+            if (tokenInput) {
+              tokenInput.value = '';
+            }
           } else {
             status.textContent = '送信に失敗しました。時間を置いて再度お試しください。';
           }
         } catch (error) {
           status.textContent = 'エラーが発生しました。ネットワークを確認してください。';
+          if (tokenInput) {
+            tokenInput.value = '';
+          }
         }
       });
     })();
