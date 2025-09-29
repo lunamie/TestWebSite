@@ -1,97 +1,131 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-    <title>Template#047</title>
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="top">
-      <header>
-        <div class="title">
-          <h1><a href="index.html">Template#047</a></h1>
-          <p class="subtitle">xxx中心サイト</p>
-        </div>
-        <nav class="menu">
-          <ul>
-            <li class="active">
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="about.html">About</a>
-            </li>
-            <li>
-              <a href="diary.html">Diary</a>
-            </li>
-            <li>
-              <a href="gallery.html">Gallery</a>
-            </li>
-            <li>
-              <a href="link.html">Link</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <div class="wrapper">
-        <main>
-          <h2>Home</h2>
-          <h3>見出し3のサンプル</h3>
-          <blockquote>
-            引用のサンプル
-          </blockquote>
-          <em>強調（em）</em><br>
-          <strong>より強い強調（strong）</strong><br>
-          <ins>追加（ins）</ins><br>
-          <del>削除（del）</del>
-          <h3>番号付きリスト</h3>
-          <ol>
-            <li>リスト11</li>
-            <li>リスト2</li>
-            <li>リスト3</li>
-          </ol>
-          <h3>番号なしリスト</h3>
-          <ul>
-            <li>リスト1</li>
-            <li>リスト2</li>
-            <li>リスト3</li>
-          </ul>
-        </main>
-        <aside>
-          <h3>更新履歴</h3>
-          <p class="info">
-            2020/08/03 制作<br>
-            ↓<br>
-            <br>
-            <br>
-            こんな感じで更新履歴を書いてください。
-          </p>
-        </aside>    
-      </div>   
-    </div>
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li>
-            <a href="diary.html">Diary</a>
-          </li>
-          <li>
-            <a href="gallery.html">Gallery</a>
-          </li>
-          <li>
-            <a href="link.html">Link</a>
-          </li>
-        </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2ny – Game Development</title>
+  <meta name="description" content="Unityを中心としたゲーム開発の副業案件窓口です。副業としての業務委託のみ対応しています。">
+  <meta property="og:title" content="2ny – Game Development">
+  <meta property="og:description" content="Unityを中心としたゲーム開発の副業案件窓口です。副業としての業務委託のみ対応しています。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">2ny</div>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="#services">できること</a>
+        <a href="#contact">お問い合わせ</a>
       </nav>
-      <div class="copyright">
-        <small>&copy; サイト名 <samp class="designed">Designed by <a href="https://hikageishi.websozai.jp" target="_blank">日影石</a></samp></small>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <h1>2ny – Game Development</h1>
+        <p class="hero-lead">Unityを中心としたゲーム開発の副業案件を受け付けています</p>
+        <p class="hero-sub">副業としての業務委託のみ対応しています</p>
+        <a class="hero-button" href="#contact">お問い合わせ</a>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <h2>できること</h2>
+        <ul class="service-list">
+          <li>Unityゲーム開発（HDRP/URP、Timeline、ShaderGraph、アニメーション制御など）</li>
+          <li>ゲーム開発に関連するAWS環境構築や運用</li>
+          <li>技術検証・プロトタイプ制作</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="works" id="works">
+      <div class="container">
+        <h2>実績</h2>
+        <p class="works-text">現在公開できる実績はありません。</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>お問い合わせ</h2>
+        <p class="contact-intro">ご相談は下記フォームよりご連絡ください。</p>
+        <ul class="contact-notes">
+          <li>※ 副業案件のみ対応しています</li>
+          <li>※ 常駐勤務・営業・勧誘には対応できません</li>
+        </ul>
+        <form action="https://formspree.io/f/mdkweavv" method="POST" id="contact-form">
+          <div class="form-field">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div class="hidden-field" aria-hidden="true">
+            <label for="website">ウェブサイト</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="submit-button">送信する</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2ny</small>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      if (!form) return;
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (!status) return;
+        status.textContent = '';
+
+        const honeypot = form.querySelector('input[name="website"]');
+        if (honeypot && honeypot.value.trim() !== '') {
+          status.textContent = '送信ありがとうございました。';
+          form.reset();
+          return;
+        }
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            headers: {
+              'Accept': 'application/json'
+            },
+            body: formData
+          });
+
+          if (response.ok) {
+            status.textContent = '送信ありがとうございました。';
+            form.reset();
+          } else {
+            status.textContent = '送信に失敗しました。時間を置いて再度お試しください。';
+          }
+        } catch (error) {
+          status.textContent = 'エラーが発生しました。ネットワークを確認してください。';
+        }
+      });
+    })();
+  </script>
+</body>
 </html>

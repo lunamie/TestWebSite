@@ -1,0 +1,315 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #0b0b0f;
+  --color-muted: #575a65;
+  --color-accent: #1f5eff;
+  --color-surface: #f5f7ff;
+  --max-width: 920px;
+  --header-height: 64px;
+  --radius-sm: 8px;
+  --radius-lg: 32px;
+  --shadow: 0 16px 32px rgba(10, 44, 120, 0.12);
+  --font-family: 'Noto Sans JP', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Yu Gothic', '游ゴシック体', 'Yu Gothic UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 3rem, var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  gap: 1.5rem;
+}
+
+.brand {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+main {
+  padding-top: calc(var(--header-height) + 24px);
+}
+
+section {
+  padding-block: clamp(4rem, 7vw, 6rem);
+}
+
+.hero {
+  background: linear-gradient(180deg, var(--color-surface), #ffffff);
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 0 1rem 0;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 700;
+}
+
+.hero-lead {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+}
+
+.hero-sub {
+  margin: 0 0 2.5rem 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2.5rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.hero-button:hover,
+.hero-button:focus-visible {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.services h2,
+.works h2,
+.contact h2 {
+  margin: 0 0 2rem 0;
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.service-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 1.25rem;
+  font-size: 1rem;
+}
+
+.service-list li {
+  line-height: 1.8;
+}
+
+.works {
+  background: #f8f9fc;
+}
+
+.works-text {
+  margin: 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+.contact {
+  background: linear-gradient(180deg, #ffffff, #f5f7ff);
+}
+
+.contact-intro {
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.contact-notes {
+  margin: 0 auto 2rem auto;
+  padding-left: 1.2rem;
+  max-width: 500px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+#contact-form {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  font: inherit;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(31, 94, 255, 0.15);
+}
+
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.hidden-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.submit-button {
+  justify-self: center;
+  padding: 0.9rem 3rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+.form-status {
+  min-height: 1.2rem;
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.site-footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 2rem, var(--max-width));
+  }
+
+  .site-nav {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding-top: calc(var(--header-height) + 16px);
+  }
+
+  section {
+    padding-block: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  #contact-form {
+    gap: 1.25rem;
+  }
+}
