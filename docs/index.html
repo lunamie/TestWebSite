@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2ny – Game Development</title>
-  <meta name="description" content="Unityを中心としたゲーム開発の副業案件窓口です。副業としての業務委託のみ対応しています。">
-  <meta property="og:title" content="2ny – Game Development">
-  <meta property="og:description" content="Unityを中心としたゲーム開発の副業案件窓口です。副業としての業務委託のみ対応しています。">
+  <title>2ny - Unity Game Development Solutions</title>
+  <meta name="description" content="2nyはUnity専門のゲーム開発スタジオとして、先進的なリアルタイムグラフィックスと大規模開発を支えるエンジニアリングサービスを提供します。">
+  <meta property="og:title" content="2ny - Unity Game Development Solutions">
+  <meta property="og:description" content="Unity専門スタジオによるレンダリング最適化、開発基盤構築、運用支援までをワンストップで支援します。">
   <link rel="stylesheet" href="style.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LfqUtgrAAAAAJ6vVw_nmwEceHMFJKkcfB_KWjf6"></script>
 </head>
@@ -15,7 +15,7 @@
     <div class="container">
       <div class="brand">2ny</div>
       <nav class="site-nav" aria-label="メインナビゲーション">
-        <a href="#services">できること</a>
+        <a href="#services">提供サービス</a>
         <a href="#contact">お問い合わせ</a>
       </nav>
     </div>
@@ -24,42 +24,42 @@
   <main>
     <section class="hero" id="hero">
       <div class="container">
-        <h1>2ny – Game Development</h1>
-        <p class="hero-lead">Unityを中心としたゲーム開発の副業案件を受け付けています</p>
-        <p class="hero-sub">副業としての業務委託のみ対応しています</p>
-        <a class="hero-button" href="#contact">お問い合わせ</a>
+        <h1>Unity Game Development Partner</h1>
+        <p class="hero-lead">2nyはUnityに特化した開発組織として、コンソールからモバイルまでの大規模タイトルで求められるレンダリングとゲームロジックの高度な要件に対応します。</p>
+        <p class="hero-sub">HDRP・URPを軸とした表現開発、Addressablesを活用したアーキテクチャ設計、CI/CDと品質保証を含む開発プロセス整備まで、エンタープライズ水準のパートナーシップを提供します。</p>
+        <a class="hero-button" href="#contact">相談する</a>
       </div>
     </section>
 
     <section class="services" id="services">
       <div class="container">
-        <h2>できること</h2>
+        <h2>提供サービス</h2>
         <ul class="service-list">
-          <li>Unityゲーム開発（HDRP/URP、Timeline、ShaderGraph、アニメーション制御など）</li>
-          <li>ゲーム開発に関連するAWS環境構築や運用</li>
-          <li>技術検証・プロトタイプ制作</li>
+          <li>Unityアーキテクチャ設計と技術リード（HDRP・URP・SRP、Timeline、Shader Graph、パフォーマンス最適化）</li>
+          <li>描画・ゲームプレイにおける技術検証と課題解決、ツール開発、マルチプラットフォーム展開（iOS/Android/PC/コンソール）</li>
+          <li>開発基盤構築と運用支援（CI/CD、自動テスト、コード品質管理、テクニカルドキュメント整備、ナレッジ共有）</li>
         </ul>
       </div>
     </section>
 
     <section class="works" id="works">
       <div class="container">
-        <h2>実績</h2>
-        <p class="works-text">現在公開できる実績はありません。</p>
+        <h2>プロジェクト実績</h2>
+        <p class="works-text">NDAに基づき詳細非公開ですが、大規模なUnityタイトルにおいて開発組織の技術リードおよび品質保証を担当し、リリースまで一貫して支援した実績があります。</p>
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="container">
         <h2>お問い合わせ</h2>
-        <p class="contact-intro">ご相談は下記フォームよりご連絡ください。</p>
+        <p class="contact-intro">新規開発、既存タイトルの改善、技術アセスメントなど、Unityに関する課題のご相談を承っています。要件やタイムラインが未確定の場合もお気軽にお知らせください。</p>
         <ul class="contact-notes">
-          <li>※ 副業案件のみ対応しています</li>
-          <li>※ 常駐勤務・営業・勧誘には対応できません</li>
+          <li>通常1～2営業日以内に担当者よりご連絡いたします。</li>
+          <li>オンラインミーティング、Slackなどでの共同作業にも対応しています。</li>
         </ul>
         <form action="https://formspree.io/f/mdkweavv" method="POST" id="contact-form">
           <div class="form-field">
-            <label for="name">お名前</label>
+            <label for="name">ご担当者名</label>
             <input type="text" id="name" name="name" required>
           </div>
           <div class="form-field">
@@ -117,7 +117,7 @@
 
         const honeypot = form.querySelector('input[name="website"]');
         if (honeypot && honeypot.value.trim() !== '') {
-          status.textContent = '送信ありがとうございました。';
+          status.textContent = '送信できませんでした。入力内容をご確認ください。';
           form.reset();
           if (tokenInput) {
             tokenInput.value = '';
@@ -131,7 +131,7 @@
             tokenInput.value = token;
           }
         } catch (error) {
-          status.textContent = 'エラーが発生しました。ネットワークを確認してください。';
+          status.textContent = '通信エラーが発生しました。時間をおいて再度お試しください。';
           if (tokenInput) {
             tokenInput.value = '';
           }
@@ -150,16 +150,16 @@
           });
 
           if (response.ok) {
-            status.textContent = '送信ありがとうございました。';
+            status.textContent = '送信が完了しました。お問い合わせありがとうございます。';
             form.reset();
             if (tokenInput) {
               tokenInput.value = '';
             }
           } else {
-            status.textContent = '送信に失敗しました。時間を置いて再度お試しください。';
+            status.textContent = '送信に失敗しました。恐れ入りますが、別途ご連絡ください。';
           }
         } catch (error) {
-          status.textContent = 'エラーが発生しました。ネットワークを確認してください。';
+          status.textContent = '通信エラーが発生しました。時間をおいて再度お試しください。';
           if (tokenInput) {
             tokenInput.value = '';
           }
